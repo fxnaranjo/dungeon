@@ -1,0 +1,182 @@
+/* Cursed Notification Overlay Styles */
+
+.cursed-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.95);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  animation: fadeIn 0.3s ease-out;
+}
+
+.cursed-content {
+  background: linear-gradient(135deg, #2C0735 0%, #1a0420 100%);
+  border: 5px solid #8B0000;
+  border-radius: 30px;
+  padding: 60px;
+  text-align: center;
+  max-width: 600px;
+  box-shadow: 0 0 50px rgba(139, 0, 0, 0.8), 0 0 100px rgba(139, 0, 0, 0.4);
+  animation: slideIn 0.5s ease-out, shake 0.5s ease-in-out 0.5s;
+}
+
+.cursed-skull {
+  font-size: 10rem;
+  animation: skullPulse 1s ease-in-out infinite, rotate 2s ease-in-out infinite;
+  filter: drop-shadow(0 0 20px rgba(139, 0, 0, 0.8));
+  margin-bottom: 30px;
+}
+
+.cursed-title {
+  font-size: 4rem;
+  font-weight: bold;
+  color: #8B0000;
+  text-shadow: 0 0 20px rgba(139, 0, 0, 0.8), 0 0 40px rgba(139, 0, 0, 0.6);
+  margin-bottom: 30px;
+  animation: pulse 1s ease-in-out infinite;
+  letter-spacing: 5px;
+}
+
+.cursed-message {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 30px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+  animation: fadeIn 0.5s ease-out 0.3s backwards;
+}
+
+.cursed-consequence {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #FFD700;
+  text-shadow: 0 0 10px rgba(255, 215, 0, 0.8);
+  animation: fadeIn 0.5s ease-out 0.6s backwards, flash 1s ease-in-out 1s infinite;
+}
+
+/* Animations */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-100px) scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes shake {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  10%, 30%, 50%, 70%, 90% {
+    transform: translateX(-10px);
+  }
+  20%, 40%, 60%, 80% {
+    transform: translateX(10px);
+  }
+}
+
+@keyframes skullPulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+}
+
+@keyframes rotate {
+  0%, 100% {
+    transform: rotate(-10deg);
+  }
+  50% {
+    transform: rotate(10deg);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.8;
+  }
+}
+
+@keyframes flash {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+/* Responsive Design */
+
+@media (max-width: 768px) {
+  .cursed-content {
+    padding: 40px 30px;
+    max-width: 90%;
+  }
+
+  .cursed-skull {
+    font-size: 6rem;
+  }
+
+  .cursed-title {
+    font-size: 2.5rem;
+    letter-spacing: 3px;
+  }
+
+  .cursed-message {
+    font-size: 1.8rem;
+  }
+
+  .cursed-consequence {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .cursed-content {
+    padding: 30px 20px;
+  }
+
+  .cursed-skull {
+    font-size: 5rem;
+  }
+
+  .cursed-title {
+    font-size: 2rem;
+    letter-spacing: 2px;
+  }
+
+  .cursed-message {
+    font-size: 1.5rem;
+  }
+
+  .cursed-consequence {
+    font-size: 1.2rem;
+  }
+}
+
+/* Made with Bob */

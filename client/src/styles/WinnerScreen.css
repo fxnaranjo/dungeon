@@ -1,0 +1,389 @@
+.winner-screen {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  position: relative;
+  overflow: hidden;
+  padding: 2rem;
+}
+
+.confetti-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.confetti {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  top: -10px;
+  animation: fall linear infinite;
+  border-radius: 2px;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(110vh) rotate(720deg);
+  }
+}
+
+/* Fireworks container */
+.fireworks-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.firework {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  animation: firework-burst 1s ease-out forwards;
+}
+
+@keyframes firework-burst {
+  0% {
+    transform: scale(0);
+    opacity: 1;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: scale(3);
+    opacity: 0;
+  }
+}
+
+.spark {
+  position: absolute;
+  width: 60px;
+  height: 3px;
+  border-radius: 3px;
+  top: 50%;
+  left: 50%;
+  transform-origin: left center;
+  animation: spark-fly 1s ease-out forwards;
+}
+
+@keyframes spark-fly {
+  0% {
+    transform: translateX(0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(80px) scale(0.3);
+    opacity: 0;
+  }
+}
+
+.winner-content {
+  background: white;
+  border-radius: 40px;
+  padding: 4rem 3rem;
+  text-align: center;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  animation: zoom-in 0.5s ease-out;
+  position: relative;
+  z-index: 1;
+  max-width: 600px;
+}
+
+@keyframes zoom-in {
+  from {
+    transform: scale(0);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.trophy-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 1rem;
+}
+
+.trophy {
+  font-size: 6rem;
+  animation: bounce-trophy 1s ease-in-out infinite;
+  filter: drop-shadow(0 0 20px rgba(255, 215, 0, 0.8));
+}
+
+.trophy-left {
+  animation-delay: 0s;
+}
+
+.trophy-center {
+  font-size: 8rem;
+  animation-delay: 0.2s;
+}
+
+.trophy-right {
+  animation-delay: 0.4s;
+}
+
+@keyframes bounce-trophy {
+  0%, 100% {
+    transform: translateY(0) rotate(-5deg) scale(1);
+  }
+  50% {
+    transform: translateY(-30px) rotate(5deg) scale(1.1);
+  }
+}
+
+.winner-title {
+  font-size: 5.5rem;
+  background: linear-gradient(45deg, #FFD700, #FFA500, #FFD700);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 0 0 30px rgba(255, 215, 0, 0.5);
+  margin: 1rem 0;
+  animation: pulse-title 1s ease-in-out infinite, gradient-shift 3s ease infinite;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+}
+
+@keyframes pulse-title {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.15);
+  }
+}
+
+@keyframes gradient-shift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.winner-character {
+  font-size: 10rem;
+  margin: 2rem 0;
+  animation: spin-character 1.5s ease-in-out infinite, float 3s ease-in-out infinite;
+  filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.3));
+}
+
+@keyframes spin-character {
+  0%, 100% {
+    transform: rotate(-15deg) scale(1);
+  }
+  50% {
+    transform: rotate(15deg) scale(1.3);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.winner-name {
+  font-size: 4rem;
+  margin: 1rem 0;
+  font-weight: 900;
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
+  animation: rainbow-text 3s ease-in-out infinite;
+}
+
+@keyframes rainbow-text {
+  0%, 100% {
+    filter: hue-rotate(0deg);
+  }
+  50% {
+    filter: hue-rotate(30deg);
+  }
+}
+
+.winner-message {
+  font-size: 2.3rem;
+  background: linear-gradient(45deg, #FF6B6B, #4ECDC4, #45B7D1, #FFA07A);
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin: 1rem 0 2rem;
+  font-weight: 900;
+  animation: gradient-shift 2s ease infinite;
+}
+
+.play-again-btn {
+  font-size: 2.5rem;
+  padding: 1.5rem 3rem;
+  border: none;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #44ff44 0%, #22cc22 100%);
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  margin-top: 2rem;
+}
+
+.play-again-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+}
+
+.play-again-btn:active {
+  transform: scale(1.05);
+}
+
+/* Tablets */
+@media (max-width: 768px) {
+  .winner-screen {
+    padding: 1.5rem;
+  }
+
+  .winner-content {
+    padding: 3rem 2rem;
+    border-radius: 30px;
+    max-width: 90%;
+  }
+
+  .trophy {
+    font-size: 6.5rem;
+  }
+
+  .winner-title {
+    font-size: 3.8rem;
+  }
+
+  .winner-character {
+    font-size: 6.5rem;
+    margin: 1.5rem 0;
+  }
+
+  .winner-name {
+    font-size: 2.8rem;
+  }
+
+  .winner-message {
+    font-size: 1.7rem;
+  }
+
+  .play-again-btn {
+    font-size: 2.2rem;
+    padding: 1.3rem 2.7rem;
+    border-radius: 18px;
+  }
+}
+
+/* Mobile phones */
+@media (max-width: 480px) {
+  .winner-screen {
+    padding: 1rem;
+  }
+
+  .winner-content {
+    padding: 2.5rem 1.5rem;
+    border-radius: 25px;
+  }
+
+  .trophy {
+    font-size: 5rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .winner-title {
+    font-size: 2.8rem;
+  }
+
+  .winner-character {
+    font-size: 5rem;
+    margin: 1.2rem 0;
+  }
+
+  .winner-name {
+    font-size: 2.2rem;
+    margin: 0.8rem 0;
+  }
+
+  .winner-message {
+    font-size: 1.4rem;
+    margin: 0.8rem 0 1.5rem;
+  }
+
+  .play-again-btn {
+    font-size: 1.8rem;
+    padding: 1.1rem 2.2rem;
+    border-radius: 15px;
+    margin-top: 1.5rem;
+  }
+
+  .confetti {
+    width: 8px;
+    height: 8px;
+  }
+}
+
+/* Very small phones */
+@media (max-width: 360px) {
+  .winner-content {
+    padding: 2rem 1.2rem;
+    border-radius: 20px;
+  }
+
+  .trophy {
+    font-size: 4rem;
+  }
+
+  .winner-title {
+    font-size: 2.2rem;
+  }
+
+  .winner-character {
+    font-size: 4rem;
+    margin: 1rem 0;
+  }
+
+  .winner-name {
+    font-size: 1.8rem;
+  }
+
+  .winner-message {
+    font-size: 1.2rem;
+  }
+
+  .play-again-btn {
+    font-size: 1.5rem;
+    padding: 1rem 1.8rem;
+    border-radius: 12px;
+  }
+
+  .confetti {
+    width: 6px;
+    height: 6px;
+  }
+}
+
+/* Made with Bob */
