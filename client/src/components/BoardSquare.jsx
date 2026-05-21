@@ -49,7 +49,7 @@ const BoardSquare = ({ number, players, style }) => {
       {isStart && <div className="square-label">START</div>}
       
       {/* Show "GOAL" label with trophy on last square */}
-      {isGoal && <div className="square-label">🏆 GOAL 🏆</div>}
+      {isGoal && <div className="square-label">🏆 GOAL</div>}
       
       {/* Show single skull on cursed square */}
       {isCursed && <div className="square-label cursed-label">💀</div>}
