@@ -21,7 +21,8 @@ const CHARACTERS = [
   { id: 'MILO_THE_DOG', name: 'Milo the Dog', emoji: '🐕', color: '#FFDD44' },
   { id: 'ZEBRA', name: 'Zebra', emoji: '🦓', color: '#0e0e0e' },
   { id: 'PARROT', name: 'Parrot', emoji: '🦜', color: '#00FF44' },
-   { id: 'SANTA', name: 'Santa', emoji: '🎅🏼', color: '#7e199c' }
+  { id: 'SANTA', name: 'Santa', emoji: '🎅🏼', color: '#7e199c' },
+  { id: 'GOKU', name: 'Goku', emoji: '🐲', color: '#c9fa28' }
 ];
 
 
